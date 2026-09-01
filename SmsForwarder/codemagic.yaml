@@ -2,16 +2,20 @@ workflows:
   android-debug:
     name: SMS Forwarder - Android Debug APK
     max_build_duration: 60
+    environment:
+      java: 17
     scripts:
       - name: Set Android SDK location
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+          java -version
       - name: Install Gradle 8.10.2
         script: |
           curl -L --fail https://services.gradle.org/distributions/gradle-8.10.2-bin.zip -o /tmp/gradle.zip
           unzip -q /tmp/gradle.zip -d /tmp
+          /tmp/gradle-8.10.2/bin/gradle --version
       - name: Build debug APK
         script: |
-          /tmp/gradle-8.10.2/bin/gradle --no-daemon assembleDebug
+          /tmp/gradle-8.10.2/bin/gradle --no-daemon --stacktrace assembleDebug
     artifacts:
       - app/build/outputs/apk/debug/app-debug.apk

@@ -41,7 +41,7 @@ class SmsReceiver : BroadcastReceiver() {
         if (!numbersMatch(sender, configuredSource)) return
 
         try {
-            val smsManager = context.getSystemService(SmsManager::class.java)
+            val smsManager = SmsManager.getDefault()
             val parts = smsManager.divideMessage(body)
 
             if (parts.size <= 1) {
