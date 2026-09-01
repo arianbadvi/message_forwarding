@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMS Forwarder"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="When an SMS arrives from the source number, the app forwards its text to the destination number." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Forward messages from" />
+
+        <EditText
+            android:id="@+id/sourceNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Example: +989121234567"
+            android:inputType="phone"
+            android:maxLines="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Forward messages to" />
+
+        <EditText
+            android:id="@+id/destinationNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Example: +989351234567"
+            android:inputType="phone"
+            android:maxLines="1" />
+
+        <Switch
+            android:id="@+id/enabledSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Enable automatic forwarding" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Save settings" />
+
+        <TextView
+            android:id="@+id/permissionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="SMS permissions: not granted"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/permissionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Grant SMS permissions" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Last forwarding status"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lastStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:text="No message has been forwarded yet."
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Note: your mobile carrier may charge for each forwarded SMS. Some dual-SIM phones may require choosing a default SIM for SMS in Android settings." />
+
+    </LinearLayout>
+</ScrollView>
